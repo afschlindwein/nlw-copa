@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*conta o tamanho da caixa a partir da borda sem somar o valor de padding*/
+}
+:root {
+    --bg: url(./assets/bg-yellow.svg);
+    --card-bg-color: #1D1C19;
+    --card-title-border-color: #746615;
+    --card-color-primary: #F7DD43;
+}
+
+body.green {
+    --bg: url(./assets/bg-green.svg);
+    --card-bg-color: #1A1F1B;
+    --card-title-border-color: #047C3F;
+    --card-color-primary: #047C3F;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #121214;
+    background-image: var(--bg);
+    background-position: top center; /*centraliza a posicao horizontal e verfical*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#app {
+    width: fit-content; /*ajusta largura conforme a tela*/
+    margin: auto; /*tamanho ajustado automaticamente*/
+    padding-top: 52px;
+}
+
+header {
+    margin-bottom: 63px; /*distancia para o elemento superior*/
+    text-align: center;
+}
+
+#cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.card {
+    border: 1px solid #121214;
+    padding: 32px 23px; /*preenchimento cima baixo e laterias, ou seja, distancia interna entre a borda da caixa e os elementos internos*/
+    text-align: center; /*alinha os elementos dentro da caixa*/
+    background: var(--card-bg-color);
+    border-bottom: 2px solid var(--card-color-primary);
+    border-radius: 6px;
+}
+
+.card h2 {
+    display: flex; /*junta os elementos*/
+    gap: 16px; /*px entre os elementos*/
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: 1px solid var(--card-title-border-color);
+    border-radius: 6px;
+    width: fit-content;
+    margin-inline: auto; /*oara deixar a caixa centralizada e nao comecando na esquerda devido ao flex*/
+    margin-bottom: 53px;
+    color: #F7DD43;
+    font-weight: 700px;
+}
+
+.card h2 span {
+    color: #E1E1E6;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.card ul {
+    display: flex;
+    flex-direction: column; /*indica ao flex colocar um elemento abaixo do outro*/
+    gap: 24px; /*espaco entre elementos*/
+    width: 270px;
+}
+
+.card ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*posiciona os elementos nas extremidades da caixa*/
+}
+
+.card li + li {
+    padding-top: 24px;
+    border-top: 1px solid #323238;
+} /* utilizar o + cria o parametro entre o elemento atual e o anterior, ou seja, toda li que tiver uma li acima*/
+
+.card ul li strong {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 125%;
+    color: #E1E1E6;
+}
+
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover {
+    transform: scale(1.1);
+}
+
+.card h2,
+.card ul li strong,
+.card ul li img {
+    transition: transform 0.3s;
+}
+
+ul {
+    list-style: none; /*retira os bullets da lista*/
+}
+
+figcaption {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 125%;
+    color: #E1E1E6;
+}
+
+.card {
+    animation: apear .2s; /*aplica o keyframe de animacao criado*/
+}
+
+@keyframes apear {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 100;
+    }
+}
+
+@media (min-width: 700px) {
+    #cards {
+        max-width: 1020px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+footer {
+    margin: 8px;
+    padding-top: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 125%;
+    color: #E1E1E6;
+    text-align: center;
+}
+
+a:hover {
+    color: #746615;
+}
+
+a {
+    text-decoration: none;
+    color: #F7DD43;
+}
