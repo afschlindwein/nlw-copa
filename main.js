@@ -2,12 +2,12 @@ function createGame(player1, hour, player2) {
     return `
         <li>
             <figure>
-            <img src="assets/icon=${player1}.svg" alt="${player1}" title="${player1}">
+            <img src="./assets/icon=${player1}.svg" alt="${player1}" title="${player1}">
             <figcaption>${player1}</figcaption>
             </figure>
             <strong>${hour}</strong>
             <figure>
-            <img src="assets/icon=${player2}.svg" alt="${player2}" title="${player2}">
+            <img src="./assets/icon=${player2}.svg" alt="${player2}" title="${player2}">
             <figcaption>${player2}</figcaption>
             </figure>
         </li>
