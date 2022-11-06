@@ -17,6 +17,10 @@ body.green {
     --card-color-primary: #047C3F;
 }
 
+ul {
+    list-style: none; /*retira os bullets da lista*/
+}
+
 body * {
     font-family: 'Roboto', sans-serif;
 }
@@ -47,7 +51,6 @@ header {
 }
 
 .card {
-    border: 1px solid #121214;
     padding: 32px 23px; /*preenchimento cima baixo e laterias, ou seja, distancia interna entre a borda da caixa e os elementos internos*/
     text-align: center; /*alinha os elementos dentro da caixa*/
     background: var(--card-bg-color);
@@ -58,8 +61,8 @@ header {
 .card h2 {
     display: flex; /*junta os elementos*/
     gap: 16px; /*px entre os elementos*/
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 8px 16px;
     border: 1px solid var(--card-title-border-color);
     border-radius: 6px;
@@ -86,10 +89,10 @@ header {
 .card ul li {
     display: flex;
     align-items: center;
-    justify-content: space-between; /*posiciona os elementos nas extremidades da caixa*/
+    justify-content: space-between;
 }
 
-.card li + li {
+.card ul li + li {
     padding-top: 24px;
     border-top: 1px solid #323238;
 } /* utilizar o + cria o parametro entre o elemento atual e o anterior, ou seja, toda li que tiver uma li acima*/
@@ -103,30 +106,18 @@ header {
 
 .card h2:hover,
 .card ul li strong:hover,
-.card ul li figure:hover {
+.card ul li img:hover {
     transform: scale(1.1);
 }
 
 .card h2,
 .card ul li strong,
-.card ul li figure {
+.card ul li img {
     transition: transform 0.3s;
 }
 
-ul {
-    list-style: none; /*retira os bullets da lista*/
-}
-
-.card figcaption {
-    text-align: center;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 125%;
-    color: #E1E1E6;
-}
-
 .card {
-    animation: apear .2s; /*aplica o keyframe de animacao criado*/
+    animation: apear .2s forwards; /*aplica o keyframe de animacao criado*/
 }
 
 @keyframes apear {
